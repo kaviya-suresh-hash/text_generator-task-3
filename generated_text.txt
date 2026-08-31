@@ -1,0 +1,11 @@
+machine learning applications.
+
+This is the first of several chapters to document the structure of the
+programming language. In previous chapters we have also shown how the
+language is implemented by a variety of classes, and we have given examples
+of various tools used to write the language.
+
+The first chapter describes how the language is compiled, and how to
+process the data before it is processed. The second chapter makes up the
+programming language and describes the use of the language.
+
