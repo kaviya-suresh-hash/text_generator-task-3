@@ -1,23 +1,46 @@
 from transformers import pipeline
+import pandas as pd
+import os
 
-pipe = pipeline(
+generator = pipeline(
     "text-generation",
     model="EleutherAI/gpt-neo-125m"
 )
 
 prompt = "Artificial Intelligence is"
 
-result = pipe(
-    prompt,
-    max_new_tokens=100,
-    do_sample=True,
-    temperature=0.8,
-    top_p=0.9
+temperatures = [0.2, 0.7, 1.0]
+top_k_values = [20, 50, 100]
+
+results = []
+
+for temp in temperatures:
+    for top_k in top_k_values:
+
+        output = generator(
+            prompt,
+            max_new_tokens=50,
+            temperature=temp,
+            top_k=top_k,
+            do_sample=True
+        )
+
+        generated_text = output[0]["generated_text"]
+
+        results.append({
+            "Prompt": prompt,
+            "Temperature": temp,
+            "Top_K": top_k,
+            "Generated_Text": generated_text
+        })
+
+df = pd.DataFrame(results)
+
+os.makedirs("dataset", exist_ok=True)
+
+df.to_csv(
+    "dataset/text_generation_results.csv",
+    index=False
 )
 
-generated_text = result[0]["generated_text"]
-
-print(generated_text)
-
-with open("generated_text.txt", "w", encoding="utf-8") as file:
-    file.write(generated_text)
+print("Parameter comparison results saved successfully!")
