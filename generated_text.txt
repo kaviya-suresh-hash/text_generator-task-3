@@ -1,11 +1,1 @@
-machine learning applications.
-
-This is the first of several chapters to document the structure of the
-programming language. In previous chapters we have also shown how the
-language is implemented by a variety of classes, and we have given examples
-of various tools used to write the language.
-
-The first chapter describes how the language is compiled, and how to
-process the data before it is processed. The second chapter makes up the
-programming language and describes the use of the language.
-
+Artificial Intelligence is a very important tool in the creation of AI systems, and there is a growing body of work that suggests that AI systems are more capable of understanding and responding to information than human intelligence systems. For example, in the United States, a large number of companies have begun to implement AI systems, and the US Department of Justice has published a report describing the use of artificial intelligence in its management of patents. The report, published in 2014, provides an overview of the use of AI in a wide range of
